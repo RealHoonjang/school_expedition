@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포즈 인식 러너 게임</title>
+    <style>
+        #game-container, #game-canvas, #game-info {
+            display: none;
+        }
+        #start-screen {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #character-run1, #character-run2, #character-jump, #character-idle {
+            background-color: white;
+            mix-blend-mode: multiply;
+        }
+    </style>
+</head>
+<body>
+    <div id="start-screen">
+        <h1>포즈 인식 러너 게임</h1>
+        <input type="text" id="nickname" placeholder="닉네임을 입력하세요">
+        <button id="start-button" disabled>시작</button>
+    </div>
+    <div id="game-container">
+        <canvas id="game-canvas" width="800" height="400"></canvas>
+        <div id="game-info">
+            <span id="player-name"></span>
+            <span id="stage">스테이지: 1</span>
+            <span id="hearts">♥♥♥</span>
+            <span id="timer">60</span>
+            <span id="score">점수: 0</span>
+            <span id="current-pose">현재 포즈: 대기 중</span>
+            <span id="movement-status">이동 상태: 정지</span>
+            <span id="debug-info"></span>
+        </div>
+    </div>
+    <div id="pose-detection">
+        <canvas id="canvas"></canvas>
+        <div id="label-container"></div>
+    </div>
+
+    <div style="display: none;">
+        <img id="character-run1" src="./path/character-run1.png" alt="Character Run 1">
+        <img id="character-run2" src="./path/character-run2.png" alt="Character Run 2">
+        <img id="character-jump" src="./path/character-jump.png" alt="Character Jump">
+        <img id="character-idle" src="./path/character-idle.png" alt="Character Idle">
+        <img id="obstacle" src="./path/obstacle.png" alt="Obstacle">
+        <img id="background" src="./path/background.png" alt="Background">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

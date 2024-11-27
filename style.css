@@ -1,0 +1,49 @@
+/* CSS 스타일 추가 */
+.game-records {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+}
+
+.game-records table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.game-records th, 
+.game-records td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+.game-records th {
+    background: #333;
+}
+
+.game-records tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.game-records button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.game-records button:hover {
+    background: #45a049;
+}
+
+.game-over,
+.game-clear {
+    text-align: center;
+    color: white;
+}
